@@ -12,22 +12,6 @@ function Index() {
             .then(response => setData(response.data.results.filter(e => e.id !== "000")))
             .catch(error => console.log(error));
     }, []);
-  const ConnectedAgent = () => {
-      const Connected = data.filter(e => e.status === "active");
-      return Connected.length;
-    }
-  const DisconnectedAgents = () => {
-      const Disconnected = data.filter(e => e.status === "disconnected");
-      return Disconnected.length;
-    }
-  const PendingAgent = () => {
-      const Pending = data.filter(e => e.status === "pending");
-      return Pending.length;
-    }
-  const Neverconnectedagents  = () => {
-      const Neverconnected = data.filter(e => e.status === "never_connected");
-      return Neverconnected.length;
-    }
   return (
     <Container>
       <h6 className="h6-title">Hello admin.</h6>
@@ -50,7 +34,7 @@ function Index() {
             <Card.Body className="cards">
               <h6>Active agents </h6>
               <Card.Text className="card-text activeNbr numbers">
-                {ConnectedAgent()} 
+                {data.filter(e => e.status === "active").length} 
               </Card.Text>
             </Card.Body>
           </Card>
@@ -61,7 +45,7 @@ function Index() {
             <Card.Body className="cards">                            
               <h6>Disconnected agents</h6>
               <Card.Text className="card-text disconnectedNbr numbers">
-                {DisconnectedAgents()}  
+                {data.filter(e => e.status === "disconnected").length}  
               </Card.Text>
             </Card.Body>
           </Card>
@@ -72,7 +56,7 @@ function Index() {
             <Card.Body className="cards">
               <h6>Pending agents</h6>
               <Card.Text className="card-text pendingNbr numbers">
-                {PendingAgent()} 
+                {data.filter(e => e.status === "pending").length} 
               </Card.Text>
             </Card.Body>
           </Card>
@@ -83,7 +67,7 @@ function Index() {
             <Card.Body className="cards">
               <h6>Never connected agents</h6>
               <Card.Text className="card-text numbers">
-                {Neverconnectedagents()}               
+                {data.filter(e => e.status === "never_connected").length}               
               </Card.Text>
             </Card.Body>
           </Card>
