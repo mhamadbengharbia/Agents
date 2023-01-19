@@ -1,0 +1,75 @@
+body{
+    font-family:sans-serif;
+    display: flex;  
+    align-items: center;  
+    justify-content: center; 
+    height: 100vh; 
+}
+.cards{
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
+    width: 12rem ; 
+    height:9rem;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;     
+}
+h6{
+    text-align: center;
+    color: #727c85;
+    letter-spacing: -1px;
+}
+.h6-title{
+ text-align: left;
+}
+.h4-title{
+    color:#3e474e;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+    margin:30px 0px 30px 0px;
+}
+.numbers{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+}
+.totalNbr{
+    color:rgb(0, 107, 180);
+}
+.disconnectedNbr{
+    color:rgb(189, 39, 30) 
+}
+.activeNbr{
+    color:rgb(0, 120, 113) 
+}
+.neverconnectednbr{
+    color:rgb(100, 106, 119) 
+}
+.pendingNbr{
+    color:rgb(254, 197, 20) 
+}
+@media screen and (min-width: 768px) {
+.container{
+    max-width: 100% !important;
+}
+}
+@media screen and (max-width: 1200px) {
+.cards{
+    width: 100%;
+}
+}
+@media screen and (max-width: 1000px) {
+.numbers{
+    font-size: 25px;
+}
+}
+@media screen and (max-width: 768px) {
+body{
+    height: fit-content;
+    margin: 16px 0px 16px 0px !important;
+    padding-right: 0px !important;
+}
+ 
+ 
+}
+ 
